@@ -14,9 +14,9 @@ public class BITWorkFlow {
     public BITWorkFlow(Class<? extends Job> job, ExtTrigger trigger) {
 
         jobDetail = newJob(job)
-                .withIdentity("default", "default")
+                .withIdentity("default" + System.nanoTime(), "job")
                 .build();
-        
+
         this.trigger = trigger;
     }
 

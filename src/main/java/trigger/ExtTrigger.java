@@ -10,20 +10,23 @@ import schedule.Schedule;
 public class ExtTrigger extends CronTriggerImpl{
 
     private final String triggerName;
-    private final String groupName;
     private final String schedule;
 
-    public ExtTrigger( String groupName,String triggerName, Schedule schedule)
+    public ExtTrigger( String triggerName, Schedule schedule)
     {
         this.triggerName = triggerName;
-        this.groupName = groupName;
         this.schedule = schedule.toString();
     }
 
-    public ExtTrigger( String groupName,String triggerName, String schedule)
+    public ExtTrigger(String triggerName, String schedule)
     {
         this.triggerName = triggerName;
-        this.groupName = groupName;
+        this.schedule = schedule;
+    }
+
+    public ExtTrigger(String schedule)
+    {
+        this.triggerName = "default";
         this.schedule = schedule;
     }
     

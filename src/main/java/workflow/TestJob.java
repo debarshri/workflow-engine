@@ -9,7 +9,7 @@ public class TestJob implements Job {
 
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        String ls = Os.shell("hadoop fs");
-        System.out.println(ls);
+        Execution ls = Os.shell("hadoop fs");
+        System.out.println(ls.getOutput());
     }
 }
